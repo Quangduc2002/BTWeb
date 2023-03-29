@@ -1,0 +1,16 @@
+﻿@model IEnumerable<TLoaiSp>
+<div class="col-lg-3">
+    <div class="hero__categories">
+        <div class="hero__categories__all">
+            <i class="fa fa-bars"></i>
+            <span>All departments</span>
+        </div>
+        <ul>
+            @foreach (var loaiSanPham in Model)
+            {
+                @*<li><a href="@Url.Content("/home/SanPhamTheoLoai?MaLoai=" + @loaiSanPham.MaLoai)">@loaiSanPham.Loai</a></li>*@
+                <li><a asp-controller="Home" asp-action="SanPhamTheoLoai" asp-route-maloai="@loaiSanPham.MaLoai">@loaiSanPham.Loai</a></li>
+            }
+        </ul>
+    </div>
+</div>
